@@ -1,22 +1,35 @@
 <template>
   <nav class="navbar navbar-expand-md custom-nav">
     <div class="container">
-      <a class="navbar-brand" href="#">BookStore</a>
+      <RouterLink class="navbar-brand" v-bind:to="{ name: 'home' }"
+        >BookStore</RouterLink
+      >
+
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <RouterLink class="nav-link" v-bind:to="{ name: 'home' }"
+            >Home</RouterLink
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Books</a>
+          <RouterLink class="nav-link" v-bind:to="{ name: 'books' }"
+            >Books</RouterLink
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <RouterLink class="nav-link" v-bind:to="{ name: 'contact' }"
+            >Contact</RouterLink
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+          <RouterLink class="nav-link" v-bind:to="{ name: 'login' }"
+            >Login</RouterLink
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Register</a>
+          <RouterLink class="nav-link" v-bind:to="{ name: 'register' }"
+            >Register</RouterLink
+          >
         </li>
       </ul>
     </div>
@@ -24,8 +37,13 @@
 </template>
 
 <script>
+import { RouterLink } from "vue-router";
+
 export default {
   name: "Navbar",
+  components: {
+    RouterLink,
+  },
 };
 </script>
 
@@ -44,8 +62,15 @@ export default {
 }
 
 .nav-link {
-  padding: 10px 25px;
+  padding: 10px 17px !important;
   color: #fff;
   text-align: center;
+}
+.nav-link:hover {
+  color: #44b89d;
+}
+
+.active-link {
+  color: #44b89d;
 }
 </style>

@@ -1,15 +1,27 @@
 <template>
-    <div>
-        Books page
+  <section class="mt-5">
+    <div class="container">
+      <BookList :books="books"></BookList>
     </div>
+  </section>
 </template>
 
 <script>
-    export default {
-        name:"BooksView"
-    }
+import BookList from "../components/BookList.vue";
+import books from "../db";
+export default {
+  name: "BooksView",
+  components: {
+    BookList,
+  },
+  data() {
+    return {
+      books: books,
+    };
+  },
+};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
